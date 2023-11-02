@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular--app';
+  title = 'Livro de Receitas';
+
+  novaReceita(){
+    console.log('Nova Receita');
+    alert('Nova Receita');
+  }
+
+  listarReceitas(){
+    alert('Listar Receitas');
+  }
 }
