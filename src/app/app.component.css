@@ -1,0 +1,9 @@
+#page-container {
+    position: relative;
+    min-height: 100vh;
+  }
+  
+  #content-wrap {
+    padding-top: 10px;
+    padding-bottom: 10rem;    /* altura do rodapé */
+}

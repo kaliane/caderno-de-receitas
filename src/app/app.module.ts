@@ -5,16 +5,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BotaoComponent } from './botao/botao.component';
 import { CabecalhoComponent } from './cabecalho/cabecalho.component';
+import { FooterComponent } from './footer/footer.component';
+import { NovaReceitaComponent } from './nova-receita/nova-receita.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     BotaoComponent,
-    CabecalhoComponent
+    CabecalhoComponent,
+    FooterComponent,
+    NovaReceitaComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

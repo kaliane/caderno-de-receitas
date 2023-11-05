@@ -13,10 +13,10 @@ https://www.figma.com/file/2uZDTmE7eWjA5bmdVVd9Hz/Caderno-de-Receitas?type=desig
 ## Checklist
 
 - [X] Criar um repositório no GitHub com a estrutura do Gitflow, incluindo pelo menos as branches principais "main" e "develop."
-- [ ] Utilizar componentes de um framework CSS, como Bootstrap, Materialize ou outro à sua escolha.
-- [ ] Apresentar as telas com layout responsivo, adaptando-se a diferentes tamanhos de tela, usando um framework CSS ou implementações personalizadas.
-- [ ] Desenvolver o layout da aplicação com componentes, tornando o cabeçalho e o rodapé componentes reutilizáveis.
-- [ ] Aplicar pelo menos dois tipos de data-binding, como Interpolation, Property Binding, Event Binding, Two-Way Data Binding, 
+- [X] Utilizar componentes de um framework CSS, como Bootstrap, Materialize ou outro à sua escolha.
+- [X] Apresentar as telas com layout responsivo, adaptando-se a diferentes tamanhos de tela, usando um framework CSS ou implementações personalizadas.
+- [X] Desenvolver o layout da aplicação com componentes, tornando o cabeçalho e o rodapé componentes reutilizáveis.
+- [X] Aplicar pelo menos dois tipos de data-binding, como Interpolation, Property Binding, Event Binding, Two-Way Data Binding, 
 - [ ] Empregar variáveis de template e a anotação ViewChild para interagir com elementos do DOM ou componentes diretamente no template ou no código TypeScript do aplicativo.
 - [ ] Estabelecer a passagem de dados entre componentes por meio da hierarquia de componentes, empregando as anotações @Input e @Output.
 - [ ] Transferir dados, por meio de serviços, entre componentes que não estão diretamente relacionados.

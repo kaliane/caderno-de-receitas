@@ -1,0 +1,53 @@
+<form #form="ngForm">
+    <div class="mb-3">
+      <label for="titulo" class="form-label">Título</label>
+      <input type="text" class="form-control" id="titulo" name="input-titulo" [(ngModel)]="receita.titulo"/>
+    </div>
+    <div class="mb-3">
+      <label for="ingredientes" class="form-label">Ingredientes</label>
+      <textarea class="form-control" id="ingredientes" name="textarea-ingredientes" [(ngModel)]="receita.ingredientes"></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label for="comofazer" class="form-label">Como Fazer</label>
+        <textarea class="form-control" id="comofazer" name="textarea-comofazer" [(ngModel)]="receita.comoFazer"></textarea>
+    </div>
+
+    <div class="mb-3 d-grid gap-2 d-md-flex justify-content">
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="radiodificuldade" id="facil" value="facil" [(ngModel)]="receita.dificuldade">
+            <label class="form-check-label" for="facil">
+                Fácil
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="radiodificuldade" id="medio" value="medio" [(ngModel)]="receita.dificuldade">
+            <label class="form-check-label" for="medio">
+                Médio
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="radiodificuldade" id="dificil" value="dificil" [(ngModel)]="receita.dificuldade">
+            <label class="form-check-label" for="dificil">
+                Díficil
+            </label>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="categoria" class="form-label">Categoria</label>
+        <select class="form-select" aria-label="Selecione uma categoria" id="categoria" name="select-categoria" [(ngModel)]="receita.categoria">
+            <option *ngFor="let categoria of categorias" [value]="categoria">{{categoria}}</option>
+        </select>
+    </div>
+
+    <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="jafeita"  name="check-jafeita" [(ngModel)]="receita.jaFeita">
+        <label class="form-check-label" for="jafeita">Já Feita</label>
+    </div>
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <app-botao nome="Cancelar" (click)="cancelar()"></app-botao>
+        <app-botao nome="Salvar" (click)="salvar()"></app-botao>
+    </div>
+</form>

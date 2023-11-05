@@ -7,10 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CabecalhoComponent implements OnInit{
 
-  imagePath: string;
-
   constructor() { 
-    this.imagePath = 'assets/images/logo.png';
+    
   }
 
   ngOnInit(): void {
