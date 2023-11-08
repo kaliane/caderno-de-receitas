@@ -46,8 +46,11 @@
         <label class="form-check-label" for="jafeita">Já Feita</label>
     </div>
 
+    <app-avaliacao *ngIf="receita.jaFeita" #avaliacao></app-avaliacao>
+
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
         <app-botao nome="Cancelar" (click)="cancelar()"></app-botao>
         <app-botao nome="Salvar" (click)="salvar()"></app-botao>
     </div>
+
 </form>

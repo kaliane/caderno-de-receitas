@@ -8,6 +8,9 @@ import { CabecalhoComponent } from './cabecalho/cabecalho.component';
 import { FooterComponent } from './footer/footer.component';
 import { NovaReceitaComponent } from './nova-receita/nova-receita.component';
 import { FormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
+import { ListarReceitaComponent } from './listar-receita/listar-receita.component';
+import { AvaliacaoComponent } from './avaliacao/avaliacao.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import { FormsModule } from '@angular/forms';
     BotaoComponent,
     CabecalhoComponent,
     FooterComponent,
-    NovaReceitaComponent
+    NovaReceitaComponent,
+    HomeComponent,
+    ListarReceitaComponent,
+    AvaliacaoComponent
   ],
   imports: [
     BrowserModule,

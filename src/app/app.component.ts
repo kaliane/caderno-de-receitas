@@ -7,13 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Livro de Receitas';
-
-  novaReceita(){
-    console.log('Nova Receita');
-    alert('Nova Receita');
-  }
-
-  listarReceitas(){
-    alert('Listar Receitas');
-  }
 }
