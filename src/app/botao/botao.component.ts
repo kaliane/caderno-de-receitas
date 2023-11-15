@@ -9,6 +9,8 @@ import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 export class BotaoComponent implements OnInit {
 
   @Input() nome: string = 'OK';
+  @Input() desativar: boolean = false;
+  @Input() tipo: string = 'button';
   @Output() acao = new EventEmitter();
 
   ngOnInit(): void {

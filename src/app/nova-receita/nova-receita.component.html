@@ -1,44 +1,58 @@
-<form #form="ngForm">
+<h5 id="tituloReceita">Cadastro de nova receita</h5>
+
+<form #form="ngForm" class="was-validated" novalidate>
     <div class="mb-3">
       <label for="titulo" class="form-label">Título</label>
-      <input type="text" class="form-control" id="titulo" name="input-titulo" [(ngModel)]="receita.titulo"/>
+      <input type="text" class="form-control" id="titulo" name="input-titulo" [(ngModel)]="receita.titulo" required pattern="^([ A-ZÀ-Úa-zà-ú0-9\-]*)"/>
+      <div class="invalid-feedback">
+        Favor informar um título.
+      </div>
     </div>
     <div class="mb-3">
       <label for="ingredientes" class="form-label">Ingredientes</label>
-      <textarea class="form-control" id="ingredientes" name="textarea-ingredientes" [(ngModel)]="receita.ingredientes"></textarea>
+      <textarea class="form-control" id="ingredientes" name="textarea-ingredientes" [(ngModel)]="receita.ingredientes" required></textarea>
+      <div class="invalid-feedback">
+        Favor informar os ingredientes.
+      </div>
     </div>
 
     <div class="mb-3">
-        <label for="comofazer" class="form-label">Como Fazer</label>
-        <textarea class="form-control" id="comofazer" name="textarea-comofazer" [(ngModel)]="receita.comoFazer"></textarea>
+        <label for="comofazer" class="form-label">Modo de Preparo</label>
+        <textarea class="form-control" id="comofazer" name="textarea-comofazer" [(ngModel)]="receita.comoFazer" required></textarea>
+        <div class="invalid-feedback">
+            Favor informar o modo de preparo.
+          </div>
     </div>
 
     <div class="mb-3 d-grid gap-2 d-md-flex justify-content">
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="radiodificuldade" id="facil" value="facil" [(ngModel)]="receita.dificuldade">
+            <input class="form-check-input" type="radio" name="radiodificuldade" id="facil" value="facil" [(ngModel)]="receita.dificuldade" required>
             <label class="form-check-label" for="facil">
                 Fácil
             </label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="radiodificuldade" id="medio" value="medio" [(ngModel)]="receita.dificuldade">
+            <input class="form-check-input" type="radio" name="radiodificuldade" id="medio" value="medio" [(ngModel)]="receita.dificuldade" required>
             <label class="form-check-label" for="medio">
                 Médio
             </label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="radiodificuldade" id="dificil" value="dificil" [(ngModel)]="receita.dificuldade">
+            <input class="form-check-input" type="radio" name="radiodificuldade" id="dificil" value="dificil" [(ngModel)]="receita.dificuldade" required>
             <label class="form-check-label" for="dificil">
                 Díficil
             </label>
         </div>
+        <div class="invalid-feedback">Favor selecionar a dificuldade</div>
     </div>
 
     <div class="mb-3">
         <label for="categoria" class="form-label">Categoria</label>
-        <select class="form-select" aria-label="Selecione uma categoria" id="categoria" name="select-categoria" [(ngModel)]="receita.categoria">
+        <select class="form-select" aria-label="Selecione uma categoria" id="categoria" name="select-categoria" [(ngModel)]="receita.categoria" required>
+            <option selected disabled value="">Selecione...</option>
             <option *ngFor="let categoria of categorias" [value]="categoria">{{categoria}}</option>
         </select>
+        <div id="categoriaFeedback" class="invalid-feedback">Favor selecionar a categoria.</div>
     </div>
 
     <div class="mb-3 form-check">
@@ -50,7 +64,7 @@
 
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
         <app-botao nome="Cancelar" (click)="cancelar()"></app-botao>
-        <app-botao nome="Salvar" (click)="salvar()"></app-botao>
+        <app-botao nome="Salvar" (click)="salvar()" [desativar]="!form.valid"></app-botao>
     </div>
 
 </form>

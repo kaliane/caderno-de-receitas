@@ -1,3 +1,4 @@
+import { ReceitaService } from './../service/receita.service';
 import { Component, OnInit } from '@angular/core';
 import { Receita } from '../model/receita';
 import { Router } from '@angular/router';
@@ -12,7 +13,8 @@ export class ListarReceitaComponent implements OnInit{
   listaReceita: Receita[] = [];
   receita: Receita = new Receita();
 
-  constructor(private router: Router ) { }
+  constructor(private router: Router,
+    private receitaService: ReceitaService ) { }
 
   ngOnInit() {
 
@@ -21,7 +23,7 @@ export class ListarReceitaComponent implements OnInit{
   }
 
   alimentarTabela(){
-   this.listaReceita = this.receita.listaReceitas();
+   this.listaReceita = this.receitaService.getReceitas();
   }
 
   editar(id: number){
@@ -31,6 +33,11 @@ export class ListarReceitaComponent implements OnInit{
 
   excluir(id: number){ 
     console.log(id);
+    let comfirma = window.confirm("Deseja realmente excluir?");
+    if (comfirma) {
+      this.receitaService.delete(id);
+      this.alimentarTabela();
+    }
   }
 
 }
