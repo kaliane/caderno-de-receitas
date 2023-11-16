@@ -1,0 +1,33 @@
+{
+  "receitas": [
+    {
+      "id": 1,
+      "titulo": "Bolo de Cenoura",
+      "ingredientes": "3 cenouras médias raspadas e picadas, 3 ovos, 1 xícara de óleo, 2 xícaras de açúcar, 2 xícaras de farinha de trigo, 1 colher (sopa) de fermento em pó",
+      "comoFazer": "Bata no liquidificador primeiro os ovos com a cenoura e o óleo, acrescente o açúcar e bata por mais uns 5 minutos. Depois numa tigela ou na batedeira, coloque o restante dos ingredientes misturando tudo, menos o fermento. Esse é misturado lentamente com uma colher. Asse em forno pré-aquecido (180ºC) por 40 minutos.",
+      "dificuldade": "dificil",
+      "categoria": "Bolos",
+      "jaFeita": false
+    },
+    {
+      "id": 2,
+      "titulo": "Drink de Morango",
+      "ingredientes": "1 dose de vodka, 1 dose de licor de morango, 1 dose de suco de laranja, 1 dose de suco de abacaxi, 1 dose de groselha, 1 morango para decorar",
+      "comoFazer": "Coloque todos os ingredientes em uma coqueteleira com gelo e agite bem. Sirva em seguida em um copo decorado com morango.",
+      "dificuldade": "medio",
+      "categoria": "Bebidas",
+      "jaFeita": true,
+      "avaliacao": "1"
+    },
+    {
+      "id": 3,
+      "titulo": "Caipirinha",
+      "ingredientes": "1 dose de cachaça, 1 limão, 2 colheres (sopa) de açúcar, gelo picado",
+      "comoFazer": "Corte o limão em 4 partes e coloque em um copo. Acrescente o açúcar e amasse bem. Complete o copo com gelo picado e adicione a cachaça. Mexa bem e sirva a seguir.",
+      "dificuldade": "facil",
+      "categoria": "Bebidas",
+      "jaFeita": true,
+      "avaliacao": "2"
+    }
+  ]
+}

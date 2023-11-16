@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class ListarReceitaComponent implements OnInit{
 
   listaReceita: Receita[] = [];
-  receita: Receita = new Receita();
+  nome!: string;
 
   constructor(private router: Router,
     private receitaService: ReceitaService ) { }
@@ -19,24 +19,27 @@ export class ListarReceitaComponent implements OnInit{
   ngOnInit() {
 
     this.alimentarTabela();
+    if (this.receitaService.buscarNome() != null) {
+      this.nome = this.receitaService.buscarNome()!;
+    }
 
   }
 
   alimentarTabela(){
-   this.listaReceita = this.receitaService.getReceitas();
+    this.receitaService.getReceitas().then(receitas => this.listaReceita = receitas).catch(erro => console.log(erro));
   }
 
   editar(id: number){
-    console.log(id);
-    this.router.navigate(['/receita/editar', id]);
+    this.receitaService.editarReceita(id);
   }
 
   excluir(id: number){ 
     console.log(id);
     let comfirma = window.confirm("Deseja realmente excluir?");
     if (comfirma) {
-      this.receitaService.delete(id);
-      this.alimentarTabela();
+      this.receitaService.delete(id).then(receita => {
+        this.alimentarTabela();
+      }).catch(erro => console.log(erro));
     }
   }
 

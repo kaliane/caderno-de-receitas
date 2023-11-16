@@ -1,23 +1,24 @@
+<h5 class="tituloReceita" *ngIf="nome != null"> Caderno de Receitas de {{nome}}</h5>
 <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Titulo</th>
-        <th>Categoria</th>
-        <th>Dificuldade</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of listaReceita">
-        <td>{{item.id}}</td>
-        <td>{{item.titulo}}</td>
-        <td>{{item.categoria}}</td>
-        <td>{{item.dificuldade}}</td>
-        <td>
-          <button class="btn btn-primary" (click)="editar(item.id)">Editar</button>
-          <button class="btn btn-danger" (click)="excluir(item.id)">Excluir</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Titulo</th>
+      <th>Categoria</th>
+      <th>Dificuldade</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of listaReceita">
+      <td>{{item.id}}</td>
+      <td>{{item.titulo}}</td>
+      <td>{{item.categoria}}</td>
+      <td>{{item.dificuldade}}</td>
+      <td>
+        <button class="btn btn-primary" (click)="editar(item.id)">Editar</button>
+        <button class="btn btn-danger" (click)="excluir(item.id)">Excluir</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

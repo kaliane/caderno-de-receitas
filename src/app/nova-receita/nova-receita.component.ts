@@ -10,12 +10,13 @@ import { Shared } from '../util/shared';
   templateUrl: './nova-receita.component.html',
   styleUrls: ['./nova-receita.component.css']
 })
-export class NovaReceitaComponent implements OnInit, AfterViewInit{
+export class NovaReceitaComponent implements OnInit{
 
   receita: Receita = new Receita();
   categorias!: string[];
   listaReceita: Receita[] = [];
   isEdit: boolean = false;
+  nome!: string;
   @ViewChild('avaliacao') avaliacao !: AvaliacaoComponent;
 
   constructor(
@@ -29,21 +30,23 @@ export class NovaReceitaComponent implements OnInit, AfterViewInit{
     let idParam = this.route.snapshot.paramMap.get('id');
     
     if(idParam != null) {
-      this.listaReceita = this.receitaService.getReceitas();
+      //this.listaReceita = this.receitaService.getReceitas();
       let id = Number(idParam);
-      this.receita = this.listaReceita.find(receita => receita.id == id)!;
+      //this.receita = this.listaReceita.find(receita => receita.id == id)!;
+      this.receitaService.getReceitaById(id)
+        .then(receita => {
+          this.receita = receita;
+        })
+        .catch(erro => console.log(erro));
       this.isEdit = true;
+    }
+
+    if (this.receitaService.buscarNome() != null) {
+      this.nome = this.receitaService.buscarNome()!;
     }
 
     this.categorias = ['Bolos', 'Bebidas', 'Carnes', 'Aves', 'Peixes', 'Massas', 'Saladas', 'Sopas', 'Molhos', 'Sobremesas'];
     
-  }
-
-  ngAfterViewInit(): void {
-    if(this.receita.jaFeita == true){
-      console.log(this.receita.avaliacao);
-      this.avaliacao.setAvaliacao(this.receita.avaliacao);
-    }
   }
 
   salvar(): void {
@@ -52,20 +55,27 @@ export class NovaReceitaComponent implements OnInit, AfterViewInit{
     }
 
     if (this.isEdit) {
-      this.receitaService.update(this.receita);
-      this.router.navigate(['/receita']);
+
+      this.receitaService.update(this.receita).then(receita => {
+        window.alert("Receita atualizada com sucesso!");
+        this.receitaService.voltarListaReceitas();
+      }).catch(erro => console.log(erro));
+
     } else {
-      this.receita.id = this.receitaService.proximoId();
-      this.receitaService.salvar(this.receita);
+
+      this.receitaService.salvar(this.receita).then(receita => {
+        window.alert("Receita salva com sucesso!");
+        this.receita = new Receita();
+      })
+      .catch(erro => console.log(erro));
     }
 
-    window.alert("Receita salva com sucesso!");
-    this.receita = new Receita();
+   
   }
 
   cancelar(): void {
     if (this.isEdit) {
-      this.router.navigate(['/receita']);
+      this.receitaService.voltarListaReceitas();
     } else {
       this.receita = new Receita();
     }

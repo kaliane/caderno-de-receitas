@@ -5,17 +5,11 @@ import { Component, Input } from '@angular/core';
   templateUrl: './avaliacao.component.html',
   styleUrls: ['./avaliacao.component.css']
 })
-export class AvaliacaoComponent {
+export class AvaliacaoComponent{
 
-  nota: string = "0";
+  @Input() nota: string = "0";
 
-  getAvaliacao(): number {
-    return Number(this.nota);
+  getAvaliacao(): string {
+    return this.nota;
   }
-
-  setAvaliacao(nota: number): void {
-    console.log(nota);
-    this.nota = nota.toString();
-  }
-
 }

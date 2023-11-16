@@ -6,7 +6,7 @@ export class Receita {
     dificuldade: string;
     categoria: string;
     jaFeita: boolean;
-    avaliacao: number;
+    avaliacao: string;
 
     constructor() {
         this.id = 0;
@@ -16,6 +16,6 @@ export class Receita {
         this.dificuldade = "";
         this.categoria = "";
         this.jaFeita = false;
-        this.avaliacao = 0;
+        this.avaliacao = "0";
     }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Constants } from '../util/constants';
 
 @Component({
   selector: 'app-home',
@@ -8,12 +9,15 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit{
 
+  nome!: string;
+
   constructor(
     private route: ActivatedRoute,
     private router: Router
   ) { }
 
   ngOnInit() {
+    this.nome = localStorage.getItem(Constants.NOME_KEY)!;
   }
 
   novaReceita(){
@@ -22,6 +26,10 @@ export class HomeComponent implements OnInit{
 
   listarReceitas(){
     this.router.navigate(['/receita']);
+  }
+
+  onInputChange(){
+    localStorage.setItem(Constants.NOME_KEY, this.nome);
   }
 
 }

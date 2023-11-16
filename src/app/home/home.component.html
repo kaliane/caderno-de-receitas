@@ -1,5 +1,10 @@
 <div id="alinhamento">
+
     <div class="d-grid gap-2 col-6 mx-auto">
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="nome" name="input-nome" [(ngModel)] = "nome" (ngModelChange)="onInputChange()"/>
+            <label for="nome" class="form-label">Seu Nome</label>
+        </div>
         <button type="button" (click)=novaReceita() class="btn btn-success btn-lg">Cadastrar Nova Receita</button>
         <button type="button" (click)=listarReceitas() class="btn btn-success btn-lg">Visualizar Receitas</button>
     </div>
