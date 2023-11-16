@@ -30,14 +30,15 @@ export class NovaReceitaComponent implements OnInit{
     let idParam = this.route.snapshot.paramMap.get('id');
     
     if(idParam != null) {
-      //this.listaReceita = this.receitaService.getReceitas();
+
       let id = Number(idParam);
-      //this.receita = this.listaReceita.find(receita => receita.id == id)!;
-      this.receitaService.getReceitaById(id)
-        .then(receita => {
-          this.receita = receita;
-        })
-        .catch(erro => console.log(erro));
+      this.receitaService.getReceitaById(id).subscribe({
+        next: (receita) => {this.receita = receita[0];
+        console.log(receita)
+        },
+        error: (error) => console.log(error)
+      });
+
       this.isEdit = true;
     }
 

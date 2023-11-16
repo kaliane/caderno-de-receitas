@@ -26,7 +26,11 @@ export class ListarReceitaComponent implements OnInit{
   }
 
   alimentarTabela(){
-    this.receitaService.getReceitas().then(receitas => this.listaReceita = receitas).catch(erro => console.log(erro));
+    this.receitaService.getReceitas().subscribe({
+      next: (receitas) => {this.listaReceita = receitas;
+      },
+      error: (error) => console.log(error)
+    });
   }
 
   editar(id: number){

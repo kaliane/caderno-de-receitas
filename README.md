@@ -26,12 +26,12 @@ https://www.figma.com/file/2uZDTmE7eWjA5bmdVVd9Hz/Caderno-de-Receitas?type=desig
 - [X] Implementar máscaras em campos de formulário, quando necessário, para melhorar a experiência do usuário ao inserir dados.
 - [X] Desabilitar o botão de envio (submit) enquanto o formulário estiver em um estado inválido.
 - [X] Realizar requisições à API com tratamento adequado das respostas de sucesso e erro com Promises.
-- [ ] Realizar requisições à API com tratamento adequado das respostas de sucesso e erro com Observables.
+- [X] Realizar requisições à API com tratamento adequado das respostas de sucesso e erro com Observables.
 - [X] Criar o cadastro completo de uma entidade, incluindo operações de criação, leitura, atualização e exclusão (CRUD) utilizando uma API, como o JSON Server.
 - [X] Utilizar o armazenamento local (LocalStorage ou SessionStorage) para armazenar dados temporários, quando necessário.
 - [X] Aplicar a diretiva estrutural ngFor para apresentar uma lista dinâmica de dados em seu aplicativo.
 - [X] Utilizar a diretiva ngIf para controlar a exibição ou ocultação de elementos com base em condições específicas.
-- [ ] Formatar a apresentação de dados com Pipes, de acordo com os requisitos do aplicativo.
+- [X] Formatar a apresentação de dados com Pipes, de acordo com os requisitos do aplicativo.
 - [ ] Executar o processo de build da aplicação e realizar o deploy para tornar o aplicativo acessível online.
 
 

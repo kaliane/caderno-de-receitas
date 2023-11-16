@@ -4,6 +4,8 @@ import { WebStorageUtil } from '../util/web-storage-util';
 import { Constants } from '../util/constants';
 import { Router } from '@angular/router';
 import { ReceitasPromiseService } from './receitas-promise.service';
+import { Observable } from 'rxjs';
+import { HttpParams, HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -11,10 +13,16 @@ import { ReceitasPromiseService } from './receitas-promise.service';
 
 export class ReceitaService {
   listaReceita: Receita[] = [];
+  URL = 'http://localhost:3000/receitas'
+
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+  };
 
   constructor(
     private router: Router,
-    private receitasPromise: ReceitasPromiseService
+    private receitasPromise: ReceitasPromiseService,
+    private httpClient: HttpClient
   ) {
   }
 
@@ -27,33 +35,26 @@ export class ReceitaService {
   }
 
   salvar(receita: Receita): Promise<Receita> {
-    /*this.listaReceita = WebStorageUtil.getArray(Constants.RECEITA_KEY);
-    this.listaReceita.push(receita);
-    WebStorageUtil.set(Constants.RECEITA_KEY, this.listaReceita);*/
     return this.receitasPromise.save(receita);
-    
   }
 
   update(receita: Receita): Promise<Receita> {
-    /*this.delete(receita.id);
-    this.salvar(receita);*/
     return this.receitasPromise.update(receita);
   }
 
   delete(id: number): Promise<Receita> {
-    /*this.listaReceita = WebStorageUtil.getArray(Constants.RECEITA_KEY);
-    this.listaReceita = this.listaReceita.filter(receita => receita.id != id);
-    WebStorageUtil.set(Constants.RECEITA_KEY, this.listaReceita);*/
     return this.receitasPromise.delete(id);
   }
 
-  getReceitas(): Promise<Receita[]>{
-    //return WebStorageUtil.getArray(Constants.RECEITA_KEY);
-    return this.receitasPromise.findAll();
+  getReceitas(): Observable<Receita[]>{
+    return this.httpClient.get<Receita[]>(this.URL);
   }
 
-  getReceitaById(id: number): Promise<Receita> {
-    return this.receitasPromise.findById(id);
+  getReceitaById(id: number): Observable<Receita[]> {
+    const query: HttpParams = new HttpParams().set('id', id.toString());
+    const options = id ? { params: query } : {};
+
+    return this.httpClient.get<Receita[]>(this.URL, options);
   }
 
   buscarNome(): string | null {
