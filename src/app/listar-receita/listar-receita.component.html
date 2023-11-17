@@ -1,4 +1,4 @@
-<h5 class="tituloReceita" *ngIf="nome != null"> Caderno de Receitas de {{nome | titlecase}}</h5>
+<h5 class="tituloReceita" *ngIf="nome != null && nome.length > 0"> Caderno de Receitas de {{nome | titlecase}}</h5>
 <div class="table-responsive">
   <table class="table table-hover">
     <thead>
