@@ -8,7 +8,7 @@ https://github.com/kaliane/caderno-de-receitas
 
 ## Endereço de Deploy - GitHub Pages
 
-https://kaliane.github.io/caderno-de-receitas/receita
+https://kaliane.github.io/caderno-de-receitas/
 
 ## Protótipo
 
