@@ -2,13 +2,21 @@
 
 Este projeto tem como objetivo implementar um caderno de receitas culinárias.
 
-## Endereço de Deploy - GitHub Pages
+## Link do GitHub
 
 https://github.com/kaliane/caderno-de-receitas
+
+## Endereço de Deploy - GitHub Pages
+
+https://kaliane.github.io/caderno-de-receitas/receita
 
 ## Protótipo
 
 https://www.figma.com/file/2uZDTmE7eWjA5bmdVVd9Hz/Caderno-de-Receitas?type=design&node-id=1%3A2&mode=design&t=mKuLvsrc99bTTr1Y-1
+
+## Link gravação explicação do projeto
+
+https://www.loom.com/share/7bf515c5d0954abfab390306b118bd7f?sid=b0d0e9e4-5c46-4f36-a51a-e42c352bd2e1
 
 ## Checklist
 
@@ -34,32 +42,20 @@ https://www.figma.com/file/2uZDTmE7eWjA5bmdVVd9Hz/Caderno-de-Receitas?type=desig
 - [X] Formatar a apresentação de dados com Pipes, de acordo com os requisitos do aplicativo.
 - [X] Executar o processo de build da aplicação e realizar o deploy para tornar o aplicativo acessível online.
 
-
-
-# AngularApp
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.9.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Manual de execução
+- Clonar o repositório com `git clone`
+- Fazer checkout no branch `develop` que contém as modificações mais recentes
+- Abrir o projeto no editor Visual Studio Code (VS Code)
+- Abrir um terminal pelo VSCode ou qualquer terminal do seu Sistema Operacional apontando para o diretório raiz do projeto 
+- Instalar as dependências contidas no `package.json`
+  - Comando: `npm i`
+- (Opcional) Instalar o JSON Server globalmente disponível em `https://www.npmjs.com/package/json-server`
+  - Comando: `npm i -g json-server` 
+  - É opcional porque a dependência já vem cadastrada no arquivo `package.json` para instalação local na pasta `node_modules`
+- Executar a API Fake (JSON Server) via um dos seguintes comandos: 
+  - Execução via script registrado no `package.json`: `npm run json:server` 
+  - Ou via Execução explícita: `json-server --watch db.json`
+- O comando para execução do JSON Server deve ser aplicado no diretório raiz do projeto, ou seja, que contém o arquivo `db.json`.
+  - Por padrão, a aplicação JSON Server executa no endereço `localhost:3000`    
+- Abrir um novo terminal pelo VSCode e então executar o projeto Angular
+  - Comando: `ng serve`
