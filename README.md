@@ -32,7 +32,7 @@ https://www.figma.com/file/2uZDTmE7eWjA5bmdVVd9Hz/Caderno-de-Receitas?type=desig
 - [X] Aplicar a diretiva estrutural ngFor para apresentar uma lista dinâmica de dados em seu aplicativo.
 - [X] Utilizar a diretiva ngIf para controlar a exibição ou ocultação de elementos com base em condições específicas.
 - [X] Formatar a apresentação de dados com Pipes, de acordo com os requisitos do aplicativo.
-- [ ] Executar o processo de build da aplicação e realizar o deploy para tornar o aplicativo acessível online.
+- [X] Executar o processo de build da aplicação e realizar o deploy para tornar o aplicativo acessível online.
 
 
 
