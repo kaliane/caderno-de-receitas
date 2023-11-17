@@ -1,4 +1,4 @@
-<h5 class="tituloReceita" *ngIf="nome != null"> Caderno de Receitas de {{nome | titlecase}}</h5>
+<h5 class="tituloReceita" *ngIf="nome != null && nome.length > 0"> Caderno de Receitas de {{nome | titlecase}}</h5>
 <h5 class="tituloReceita">Cadastro de nova receita</h5>
 
 <form #form="ngForm" class="was-validated" novalidate>
